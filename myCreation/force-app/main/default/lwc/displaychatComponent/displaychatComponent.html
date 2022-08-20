@@ -1,0 +1,26 @@
+<template>
+    <div class="scrollContainer" onscroll={handleScroll}>
+        <div class="scrollArea" >
+              <template if:true={getrecord.data}>
+            <template for:each={getrecord.data} for:item="ch">
+                <lightning-card  key={ch.id}>
+                <div class={ch.alignslds__c}>
+                  <div> <p>{ch.Message__c}</p></div> 
+                   <div class="slds-chat-message__meta">{ch.User_Name__c}</div>       
+                </div>
+                
+            </lightning-card>
+            </template> 
+        </template>
+  
+    </div>
+   
+    <lightning-card>
+        <div><p class="slds-text-align_right">{getmessage}</p></div>
+    </lightning-card>  
+   
+     
+</div>
+    <c-send-message-component onsend={handleSend} record-id={recordId} object-api-name={objectApiName}></c-send-message-component>
+
+</template>
