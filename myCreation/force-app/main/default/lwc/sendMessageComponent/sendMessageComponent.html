@@ -1,0 +1,21 @@
+<template>
+    <lightning-card>
+        <lightning-layout >
+            <lightning-layout-item size="9" flexibility="grow" padding="around-small">
+                <lightning-input type="text" label="Test" name="test" onchange={handleChange}
+                    placeholder="Message" variant="label-hidden" value={message}></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item size="3" flexibility="stretch" padding="around-small">
+                <!-- <lightning-button-icon icon-name="utility:attach" size="large" alternative-text="send" class="mybutton"></lightning-button-icon> -->
+               <!-- start button -->
+                <template if:true={isBoolean}>
+                    <lightning-button-icon icon-name="utility:send" size="large" alternative-text="send" class="mybutton"></lightning-button-icon>
+                </template>
+                <template if:false={isBoolean}>
+                    <lightning-button-icon icon-name="utility:send" size="large" variant="brand" alternative-text="send" onclick={sendinghandle} class="mybutton"></lightning-button-icon>
+              <!-- end -->
+                </template>   
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>
